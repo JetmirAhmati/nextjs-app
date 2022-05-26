@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 
-const signUpPage = () => {
+const SignUpPage = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef()
@@ -71,4 +71,4 @@ const signUpPage = () => {
     )
 }
 
-export default signUpPage
+export default SignUpPage

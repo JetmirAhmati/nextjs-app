@@ -4,7 +4,7 @@ import { Alert, Card, Form, Button, Container } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/router';
 
-const loginPage = () => {
+const LoginPage = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
     const [error, setError] = useState();
@@ -61,4 +61,4 @@ const loginPage = () => {
     )
 }
 
-export default loginPage
+export default LoginPage
