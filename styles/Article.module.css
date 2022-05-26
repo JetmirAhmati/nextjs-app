@@ -18,6 +18,10 @@
   max-width: calc(50% - 2rem);
 }
 
+.card img {
+  width: 100%;
+}
+
 .card:hover,
 .card:focus,
 .card:active {

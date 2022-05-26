@@ -1,5 +1,6 @@
 import { apiUrl } from '../../../config';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const article = (article) => {
@@ -8,6 +9,10 @@ const article = (article) => {
             <h1>
                 {article.title}
             </h1>
+            <figure>
+                <img src={article.imgSrc}></img>
+                {/* <Image src={article.imgSrc} layout='fill'></Image> */}
+            </figure>
             <p>
                 {article.body}
             </p>

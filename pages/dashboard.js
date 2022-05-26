@@ -1,9 +1,9 @@
 import { useAuth } from '../context/AuthContext';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Alert } from 'react-bootstrap';
 import { useState } from 'react'
 import Link from 'next/link'
 
-function dashboard() {
+function Dashboard() {
     const { currentUser, logOut } = useAuth()
     const [error, setError] = useState();
 
@@ -43,4 +43,4 @@ function dashboard() {
 }
 
 
-export default dashboard
+export default Dashboard
