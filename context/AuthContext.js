@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
         return unsubscribe
     }, [])
 
-    console.log('isUserLoggedIn: ', isUserLoggedIn)
+    // console.log('isUserLoggedIn: ', isUserLoggedIn)
 
     const value = {
         currentUser,
