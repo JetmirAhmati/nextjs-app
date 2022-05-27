@@ -5,13 +5,12 @@ import Image from 'next/image';
 
 const article = (article) => {
     return (
-        <div className='grid'> Article ID:  {article.id}
+        <article className='grid'> Article ID:  {article.id}
             <h1>
                 {article.title}
             </h1>
             <figure>
-                <img src={article.imgSrc}></img>
-                {/* <Image src={article.imgSrc} layout='fill'></Image> */}
+                <Image src={article.imgSrc} alt="sfgbsfg" layout='raw'></Image>
             </figure>
             <p>
                 {article.body}
@@ -20,13 +19,18 @@ const article = (article) => {
             <Link href='/'>
                 <button>Go Back </button>
             </Link>
-        </div>
+        </article>
     )
 }
 
-export const getStaticProps = async (context) => {
-    const res = await fetch(`${apiUrl}/api/articles/${context.params.id}`)
+export const getServerSideProps = async (context) => {
+    console.log('contex', context)
+    const res = await fetch(`${apiUrl}/api/articles/${context.params.id}`) //apiUrl
+    // const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`);
+
+
     const article = await res.json();
+    console.log(article);
 
     return {
         props: article
@@ -34,17 +38,18 @@ export const getStaticProps = async (context) => {
 }
 
 
-export const getStaticPaths = async () => {
-    const res = await fetch(`${apiUrl}/api/articles`)
-    const articles = await res.json();
-    const ids = articles.map(article => article.id)
+// export const getStaticPaths = async () => {
+//     const res = await fetch(`${apiUrl}/api/articles`)
+//     // const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`);
+//     const articles = await res.json();
+//     const ids = articles.map(article => article.id)
 
-    const paths = ids.map(id => ({ params: { id: id.toString() } }))
+//     const paths = ids.map(id => ({ params: { id: id.toString() } }))
 
-    return {
-        paths,
-        fallback: false
-    }
-}
+//     return {
+//         paths,
+//         fallback: false
+//     }
+// }
 
 export default article
