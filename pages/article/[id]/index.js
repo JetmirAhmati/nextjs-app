@@ -10,7 +10,7 @@ const article = (article) => {
                 {article.title}
             </h1>
             <figure>
-                <Image src={article.imgSrc} alt="sfgbsfg" layout='raw'></Image>
+                <Image src={article.imgSrc} alt="sfgbsfg" layout='raw' width={400} height={200}></Image>
             </figure>
             <p>
                 {article.body}
