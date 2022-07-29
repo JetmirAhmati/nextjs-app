@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Article from '../components/ArticleList';
 
 export default function Home({ articles }) {
+  
+  {alert(window.navigator.userAgent)}
 
   return (
     <div className='home-page'>
